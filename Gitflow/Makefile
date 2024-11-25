@@ -28,3 +28,8 @@ passwd:
 	@kubectl get secret -n jenkins jenkins -ojson | jq -r '.data."jenkins-admin-password"' | base64 -d
 	@echo "SONARQUBE:"
 	@echo "Dedey@30"
+	@echo "ARGOCD:"
+	@echo "kubectl get secret -n argocd argocd-initial-admin-secret -ojson | jq -r '.data.password' | base64 -d"
+	@echo "Gitea"
+	@echo  "user: gitea_admin"
+	echo "password: r8sA8CPHD9!bt6d "

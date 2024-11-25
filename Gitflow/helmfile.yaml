@@ -9,6 +9,10 @@ repositories:
     url: https://helm.goharbor.io
   - name: sonarqube
     url: https://SonarSource.github.io/helm-chart-sonarqube
+  - name: argo 
+    url: https://argoproj.github.io/argo-helm
+  - name: empathyco
+    url: https://empathyco.github.io/helm-charts/
 
 releases:
   - name: ingress-nginx
@@ -50,3 +54,19 @@ releases:
     version: 10.6.0
     values:
       - values/sonarqube/values.yaml
+
+  - name: argocd
+    namespace: argocd 
+    createNamespace: true
+    chart: argo/argo-cd
+    version: 7.7.5
+    values:
+      - values/argocd/values.yaml
+
+  - name: imagepullsecret-patcher
+    namespace: imagepullsecret-patcher
+    createNamespace: true
+    chart: empathyco/imagepullsecret-patcher
+    version: 1.0.0
+    values:
+    - values/imagepullsecret-patcher/values.yaml
