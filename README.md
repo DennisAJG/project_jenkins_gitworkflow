@@ -52,3 +52,6 @@ helm repo list
 ## Usando o helmfile:
 O helmfile é um orquestrador de pacotes helms(helmcharts).
 
+## Usando o imagepullsecret-patcher:
+É usado quando para um pod usar uma imagem de um registry privado, ele precisa de um secret, só que o secret é por namespace. Então oque ele faz é pegar um secret central e replicar para todas as namespaces
+
